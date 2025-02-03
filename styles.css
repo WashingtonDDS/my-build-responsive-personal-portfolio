@@ -63,8 +63,14 @@ body {
   animation: slideTop 0.5s ease forwards;
   animation-delay: calc(0.2s * var(--1));
 }
-.navbar a:hover {
+.navbar a:hover,
+.navbar a.active {
   color: var(--main-color);
+}
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
 }
 .home {
   position: relative;
@@ -265,7 +271,7 @@ section {
   width: 600px;
   height: 800px;
   padding: 75px 90px;
-  margin-left: 120px;
+  /* margin-left: 120px; */
 }
 .heading1 {
   text-align: center;
@@ -495,13 +501,13 @@ section {
   animation: showText 0.5s 1s linear forwards;
   opacity: 0;
 }
-.main-text {
+/* .main-text {
   padding-top: 130px;
   margin-top: 200px;
-}
+} */
 .main-text h2 {
   font-size: 60px;
-  line-height: 1;
+  line-height: 2;
   text-align: center;
 }
 .main-text h2 span {
@@ -678,7 +684,26 @@ form textarea {
     0 0 50px var(--transform-color), 0 0 100px var(--transform-color),
     0 0 200px var(--transform-color);
 }
-
+.last-text p {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: rgb(7, 85, 91);
+  font-weight: 300;
+  margin-top: 70px;
+}
+.top {
+  position: fixed;
+  bottom: 2.1rem;
+  right: 2.1rem;
+}
+.top i {
+  color: var(--box-black);
+  background: var(--main-color);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
 @keyframes slideRight {
   0% {
     transform: translateX(-100px);
@@ -717,5 +742,144 @@ form textarea {
   100% {
     transform: translateX(0px);
     opacity: 1;
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 3%;
+  }
+  section {
+    padding: 10rem 3% 2rem;
+  }
+  .services {
+    padding-bottom: 7rem;
+  }
+  #Skills {
+    padding-bottom: 7rem;
+  }
+  #portfolio {
+    padding-bottom: 7rem;
+  }
+  .contact {
+    min-height: auto;
+  }
+
+  .last-text {
+    padding: 2rem 3%;
+  }
+  .container1 {
+    width: 600px;
+    height: 800px;
+    padding: 75px 90px;
+  }
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+  #home {
+    flex-direction: column;
+  }
+  .home-content h3 {
+    font-size: 2.6rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .about img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .services h2 {
+    margin-bottom: 3rem;
+  }
+  .portfolio h2 {
+    margin-bottom: 3rem;
+  }
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+  .contact-text h2 {
+    font-size: 60px;
+    line-height: 2;
+    text-align: center;
+  }
+  .container1 {
+    width: 600px;
+    height: 800px;
+    padding: 75px 90px;
+  }
+}
+@media (max-width: 617px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+  .container1 {
+    width: 600px;
+    height: 800px;
+    padding: 75px 90px;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .contact form .input-box input {
+    width: 100%;
+  }
+  .container1 {
+    width: 600px;
+    height: 800px;
+    padding: 75px 90px;
+  }
+}
+@media (max-width: 365px) {
+  .home-img img {
+    width: 90vw;
+  }
+  .about-img img {
+    width: 90vw;
+  }
+  .container1 {
+    width: 600px;
+    height: 800px;
+    padding: 75px 90px;
+  }
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .footer p {
+    text-align: center;
+    margin-top: 2rem;
   }
 }
